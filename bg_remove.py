@@ -4,11 +4,11 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-st.set_page_config(layout="wide", page_title="Supprime Arriêre-plan")
+st.set_page_config(layout="wide", page_title="Supprime Arriêre plan")
 
 st.write("## Cet outils supprime l'arrière plan d'une image que vous télécharger")
 st.write(
-    ":dog: Essayez de télécharger une image pour voir l’arrière-plan supprimé comme par magie. Des images en pleine qualité peuvent être téléchargées 
+    ":dog: Essayez de télécharger une image pour voir l’arrière plan supprimé comme par magie. Des images en pleine qualité peuvent être téléchargées 
     à partir de la barre latérale. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
 )
 st.sidebar.write("## Upload and download :gear:")
@@ -25,11 +25,11 @@ def convert_image(img):
 
 def fix_image(upload):
     image = Image.open(upload)
-    col1.write("Original Image :camera:")
+    col1.write("Image Original :camera:")
     col1.image(image)
 
     fixed = remove(image)
-    col2.write("Fixed Image :wrench:")
+    col2.write("(Image sans arriere plan :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
     st.sidebar.download_button("télécharger votre image sans arrière plan", convert_image(fixed), "fixed.png", "image/png")
