@@ -11,7 +11,7 @@ st.write(
     ":dog: Essayez de télécharger une image pour voir l’arrière plan supprimé comme par magie. Des images en pleine qualité peuvent être téléchargées 
     à partir de la barre latérale. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
 )
-st.sidebar.write("## Upload and download :gear:")
+st.sidebar.write("## Choissisez une images sur votre ordinateur ou inserrer l'adresse web :gear:")
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
@@ -36,7 +36,7 @@ def fix_image(upload):
 
 
 col1, col2 = st.columns(2)
-my_upload = st.sidebar.file_uploader("téléchargé une image", type=["png", "jpg", "jpeg"])
+my_upload = st.sidebar.file_uploader("choisir une image sur votre ordinateur", type=["png", "jpg", "jpeg"])
 
 if my_upload is not None:
     if my_upload.size > MAX_FILE_SIZE:
